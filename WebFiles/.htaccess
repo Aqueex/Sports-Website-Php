@@ -1,0 +1,38 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^(/?)$ /app/main/proccess/page.php?page=home [L]
+RewriteRule ^account/profile(/?)$ /app/main/proccess/page.php?page=profile&dir=account [L]
+RewriteRule ^redir /app/main/proccess/redir.php [L,QSA]
+
+RewriteRule ^login(/?)$ /app/main/proccess/page.php?page=login&dir=login [L] 
+RewriteRule ^cikis(/?)$ /app/main/proccess/page.php?page=cikis&dir=login [L] 
+RewriteRule ^profil(/?)$ /app/main/proccess/page.php?page=profilepage&dir=login [L] 
+
+RewriteRule ^products(/?)$ /app/main/proccess/page.php?page=products [L]
+RewriteRule ^purchase(/?)$ /app/main/proccess/page.php?page=purchase [L]
+RewriteRule ^ayakkabi(/?)$ /app/main/proccess/page.php?page=sportkit [L]
+
+RewriteRule ^forma(/?)$ /app/main/proccess/page.php?page=sportkitt [L]
+
+RewriteRule ^admin(/?)$ /app/main/proccess/page.php?page=index&dir=admin [L]
+RewriteRule ^admin/login(/?)$ /app/main/proccess/page.php?page=giris&dir=admin&subdir=account [L]
+RewriteRule ^admin/logout(/?)$ /app/main/proccess/page.php?page=cikis&dir=admin&subdir=account [L]
+RewriteRule ^admin/ayarlar(/?)$ /app/main/proccess/page.php?page=siteAyar&dir=admin [L] 
+
+
+RewriteRule ^admin/users(/?)$ /app/main/proccess/page.php?page=users&dir=admin [L]
+
+
+RewriteRule ^admin/ayyakabi/yeni(.*)(/?)$ /app/main/proccess/page.php?page=ayyakabiEkle&dir=admin&id=$1 [L,QSA]
+RewriteRule ^admin/ayyakabi(.*)(/?)$ /app/main/proccess/page.php?page=ayyakabiListele&dir=admin&id=$1 [L,QSA]
+
+
+RewriteRule ^admin/forma/yeni(.*)(/?)$ /app/main/proccess/page.php?page=formaEkle&dir=admin&id=$1 [L,QSA]
+RewriteRule ^admin/forma(.*)(/?)$ /app/main/proccess/page.php?page=formaListele&dir=admin&id=$1 [L,QSA]
+RewriteRule ^admin/form/edit/(.*)(/?)$ /app/main/proccess/page.php?page=formaDuzenle&dir=admin&id=$1 [L,QSA]
+
+RewriteRule ^admin/iletisim(/?)$ /app/main/proccess/page.php?page=iletisimListele&dir=admin [L] 
+RewriteRule ^admin/iletisim/edit/(.*)(/?)$ /app/main/proccess/page.php?page=iletisimDuzenle&dir=admin&id=$1 [L,QSA]
+
+ErrorDocument 404 /app/main/proccess/page.php?page=404&dir=errors
